@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="New Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="DataSource1">
+      <Name>Orders</Name>
+      <Connection Name="nwind" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Orders">
+        <Tables>
+          <Table Name="Orders" />
+        </Tables>
+        <Columns>
+          <Column Table="Orders" Name="OrderID" />
+          <Column Table="Orders" Name="EmployeeID" />
+          <Column Table="Orders" Name="OrderDate" />
+          <Column Table="Orders" Name="CustomerID" />
+          <Column Table="Orders" Name="RequiredDate" />
+          <Column Table="Orders" Name="ShippedDate" />
+          <Column Table="Orders" Name="ShipVia" />
+          <Column Table="Orders" Name="Freight" />
+          <Column Table="Orders" Name="ShipAddress" />
+          <Column Table="Orders" Name="ShipName" />
+          <Column Table="Orders" Name="ShipCity" />
+          <Column Table="Orders" Name="ShipRegion" />
+          <Column Table="Orders" Name="ShipPostalCode" />
+          <Column Table="Orders" Name="ShipCountry" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" DataSource="DataSource1" DataMember="Orders">
+      <DataItems>
+        <Dimension DataMember="ShipName" DefaultId="DataItem0" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Weight="100">
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="100" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
