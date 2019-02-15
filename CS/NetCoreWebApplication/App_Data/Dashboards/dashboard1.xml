@@ -33,10 +33,18 @@
     <Grid ComponentName="gridDashboardItem1" Name="Grid 1" DataSource="DataSource1" DataMember="Orders">
       <DataItems>
         <Dimension DataMember="ShipName" DefaultId="DataItem0" />
+        <Dimension DataMember="ShipCity" DefaultId="DataItem1" />
+        <Dimension DataMember="ShipCountry" DefaultId="DataItem2" />
       </DataItems>
       <GridColumns>
         <GridDimensionColumn>
           <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
         </GridDimensionColumn>
       </GridColumns>
       <GridOptions />
