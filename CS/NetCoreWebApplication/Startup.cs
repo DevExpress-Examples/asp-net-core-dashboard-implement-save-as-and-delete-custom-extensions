@@ -21,21 +21,17 @@ namespace NetCoreWebApplication {
             // Add a DashboardController class descendant with a specified dashboard storage 
             // and a connection string provider. 
             services
+                .AddDevExpressControls()
                 .AddMvc()
                 .AddDefaultDashboardController(configurator => {
-                    configurator.SetDashboardStorage(new DashboardFileStorage("App_Data\\Dashboards"));
-
+                    configurator.SetDashboardStorage(new CustomDashboardFileStorage("App_Data\\Dashboards"));
                     configurator.SetConnectionStringsProvider(new DashboardConnectionStringsProvider(Configuration));
-
                 });
-            // Add the third-party (JQuery, Knockout, etc.) and DevExtreme libraries. 
-            services.AddDevExpressControls(settings => settings.Resources = ResourcesType.ThirdParty | ResourcesType.DevExtreme);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env) {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
             } else {
                 app.UseExceptionHandler("/Home/Error");
             }
