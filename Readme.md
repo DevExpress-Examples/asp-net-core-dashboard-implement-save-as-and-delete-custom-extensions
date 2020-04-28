@@ -1,7 +1,7 @@
 <!-- default file list -->
 *Files to look at*:
 
-* **[HomeController.cs](./CS/NetCoreWebApplication/Controllers/HomeController.cs)**
+* [HomeController.cs](./CS/NetCoreWebApplication/Controllers/HomeController.cs)
 * [Startup.cs](./CS/NetCoreWebApplication/Startup.cs)
 * [CustomDashboardFileStorage.cs](./CS/NetCoreWebApplication/Storages/CustomDashboardFileStorage.cs)
 * [Index.cshtml](./CS/NetCoreWebApplication/Views/Home/Index.cshtml)
