@@ -3,16 +3,7 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T601084)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [HomeController.cs](./CS/NetCoreWebApplication/Controllers/HomeController.cs)
-* [Startup.cs](./CS/NetCoreWebApplication/Startup.cs)
-* [CustomDashboardFileStorage.cs](./CS/NetCoreWebApplication/Storages/CustomDashboardFileStorage.cs)
-* [Index.cshtml](./CS/NetCoreWebApplication/Views/Home/Index.cshtml)
-* [DeleteExtension.js](./CS/NetCoreWebApplication/wwwroot/js/DeleteExtension.js)
-* [SaveAsExtension.js](./CS/NetCoreWebApplication/wwwroot/js/SaveAsExtension.js)
-<!-- default file list end -->
 # Dashboard for ASP.NET Core - How to implement Save As and Delete functionality by creating custom extensions
 
 This example demonstrates how to add the "Save As" and "Delete" [menu items](https://docs.devexpress.com/Dashboard/117444) to the Web Dashboard's UI by implementing the corresponding [custom extensions](https://docs.devexpress.com/Dashboard/117543):
@@ -23,6 +14,17 @@ This example demonstrates how to add the "Save As" and "Delete" [menu items](htt
 The image below shows the result of the extensions implementation.
 
 ![](readme.png)
+
+<!-- default file list -->
+## Files to look at
+
+* [HomeController.cs](./CS/NetCoreWebApplication/Controllers/HomeController.cs)
+* [Startup.cs](./CS/NetCoreWebApplication/Startup.cs)
+* [CustomDashboardFileStorage.cs](./CS/NetCoreWebApplication/Storages/CustomDashboardFileStorage.cs)
+* [Index.cshtml](./CS/NetCoreWebApplication/Views/Home/Index.cshtml)
+* [DeleteExtension.js](./CS/NetCoreWebApplication/wwwroot/js/DeleteExtension.js)
+* [SaveAsExtension.js](./CS/NetCoreWebApplication/wwwroot/js/SaveAsExtension.js)
+<!-- default file list end -->
 
 ## Documentation
 
