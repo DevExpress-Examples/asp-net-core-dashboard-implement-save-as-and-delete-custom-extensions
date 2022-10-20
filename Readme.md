@@ -16,7 +16,7 @@ The image below shows the result of the extensions implementation.
 ![](readme.png)
 
 <!-- default file list -->
-## Files to look at
+## Files to Review
 
 * [HomeController.cs](./CS/NetCoreWebApplication/Controllers/HomeController.cs)
 * [Startup.cs](./CS/NetCoreWebApplication/Startup.cs)
