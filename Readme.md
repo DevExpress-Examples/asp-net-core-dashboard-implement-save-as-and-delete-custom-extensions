@@ -5,9 +5,6 @@
 <!-- default badges end -->
 
 # Dashboard for ASP.NET Core - How to implement Save As and Delete functionality by creating custom extensions
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128576992/)**
-<!-- run online end -->
 
 This example demonstrates how to add the "Save As" and "Delete" [menu items](https://docs.devexpress.com/Dashboard/117444) to the Web Dashboard's UI by implementing the corresponding [custom extensions](https://docs.devexpress.com/Dashboard/117543):
 
@@ -18,16 +15,14 @@ The image below shows the result of the extensions implementation.
 
 ![](readme.png)
 
-<!-- default file list -->
 ## Files to Review
 
-* [HomeController.cs](./CS/NetCoreWebApplication/Controllers/HomeController.cs)
-* [Startup.cs](./CS/NetCoreWebApplication/Startup.cs)
-* [CustomDashboardFileStorage.cs](./CS/NetCoreWebApplication/Storages/CustomDashboardFileStorage.cs)
-* [Index.cshtml](./CS/NetCoreWebApplication/Views/Home/Index.cshtml)
-* [DeleteExtension.js](./CS/NetCoreWebApplication/wwwroot/js/DeleteExtension.js)
-* [SaveAsExtension.js](./CS/NetCoreWebApplication/wwwroot/js/SaveAsExtension.js)
-<!-- default file list end -->
+* [HomeController.cs](./CS/AspNetCoreDashboard/Controllers/HomeController.cs)
+* [Program.cs](./CS/AspNetCoreDashboard/Program.cs)
+* [CustomDashboardFileStorage.cs](./CS/AspNetCoreDashboard/Storages/CustomDashboardFileStorage.cs)
+* [Index.cshtml](./CS/AspNetCoreDashboard/Pages/Index.cshtml)
+* [DeleteExtension.js](./CS/AspNetCoreDashboard/wwwroot/js/DeleteExtension.js)
+* [SaveAsExtension.js](./CS/AspNetCoreDashboard/wwwroot/js/SaveAsExtension.js)
 
 ## Documentation
 
