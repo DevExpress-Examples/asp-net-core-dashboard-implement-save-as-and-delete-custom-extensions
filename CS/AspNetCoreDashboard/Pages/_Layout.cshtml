@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Dashboard Web Application</title>
+
+    <link href="css/site.min.css" rel="stylesheet" />
+
+    <!-- Defines the "Save As" extension template. -->
+    <script type="text/html" id="dx-save-as-form">
+        <div>Dashboard Name:</div>
+        <div style="margin: 10px 0" data-bind="dxTextBox: { value: newName }"></div>
+        <div data-bind="dxButton: { text: 'Save', onClick: saveAs }"></div>
+    </script>
+
+    <script type="text/javascript">
+        function onBeforeRender(sender) {
+            var dashboardControl = sender;
+            dashboardControl.registerExtension(new SaveAsDashboardExtension(dashboardControl));
+            dashboardControl.registerExtension(new DeleteDashboardExtension(dashboardControl));
+        }
+    </script>
+</head>
+<body>
+    @RenderBody()
+
+    <script src="js/site.min.js"></script>
+    <script type="text/javascript" src="js/SaveAsExtension.js"></script>
+    <script type="text/javascript" src="js/DeleteExtension.js"></script>
+</body>
+</html>
