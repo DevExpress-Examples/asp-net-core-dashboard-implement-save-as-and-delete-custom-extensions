@@ -22,11 +22,13 @@ namespace NetCoreWebApplication {
             // and a connection string provider. 
             services
                 .AddDevExpressControls()
-                .AddMvc()
-                .AddDefaultDashboardController(configurator => {
-                    configurator.SetDashboardStorage(new CustomDashboardFileStorage("App_Data\\Dashboards"));
-                    configurator.SetConnectionStringsProvider(new DashboardConnectionStringsProvider(Configuration));
-                });
+                .AddMvc();
+            services.AddScoped<DashboardConfigurator>((IServiceProvider serviceProvider) => {
+                DashboardConfigurator configurator = new DashboardConfigurator();
+                configurator.SetDashboardStorage(new CustomDashboardFileStorage("App_Data\\Dashboards"));
+                configurator.SetConnectionStringsProvider(new DashboardConnectionStringsProvider(Configuration));
+                return configurator;
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env) {
@@ -41,7 +43,7 @@ namespace NetCoreWebApplication {
             app.UseDevExpressControls();
             app.UseMvc(routes => {
                 // Map dashboard routes.
-                routes.MapDashboardRoute();
+                routes.MapDashboardRoute("api/dashboard", "DefaultDashboard");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
