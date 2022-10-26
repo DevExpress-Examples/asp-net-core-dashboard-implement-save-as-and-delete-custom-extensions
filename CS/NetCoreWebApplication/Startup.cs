@@ -40,15 +40,18 @@ namespace NetCoreWebApplication {
 
             app.UseStaticFiles();
             // Register the DevExpress middleware.
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
             app.UseDevExpressControls();
-            app.UseMvc(routes => {
-                // Map dashboard routes.
-                routes.MapDashboardRoute("api/dashboard", "DefaultDashboard");
-                routes.MapRoute(
+
+            app.UseRouting();
+            app.UseEndpoints(endpoints => {
+                EndpointRouteBuilderExtension.MapDashboardRoute(endpoints, "dashboardControl", "DefaultDashboard");
+                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
 }
-
