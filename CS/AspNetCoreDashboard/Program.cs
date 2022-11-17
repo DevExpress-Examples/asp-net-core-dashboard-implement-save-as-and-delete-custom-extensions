@@ -38,7 +38,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 app.MapRazorPages();
-EndpointRouteBuilderExtension.MapDashboardRoute(app, "dashboardControl", "DefaultDashboard");
+app.MapDashboardRoute("dashboardControl", "DefaultDashboard");
 app.MapDefaultControllerRoute();
 
 app.Run();
