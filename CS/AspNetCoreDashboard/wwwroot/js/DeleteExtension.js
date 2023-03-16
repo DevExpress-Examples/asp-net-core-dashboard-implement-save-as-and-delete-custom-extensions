@@ -1,35 +1,46 @@
-﻿function DeleteDashboardExtension(dashboardControl) {
-    this._dashboardControl = dashboardControl;
-    this.name = "dxdde-delete-dashboard";
-    this._menuItem = {
-        id: this.name,
-        title: "Delete",
-        click: this.deleteDashboard.bind(this),
-        selected: ko.observable(false),
-        disabled: ko.computed(function () { return !this._dashboardControl.dashboard(); }, this),
-        index: 113,
-        hasSeparator: true,
-        data: this
-    };
-}
-DeleteDashboardExtension.prototype.deleteDashboard = function () {
-    if (this._toolbox) {
-        if (confirm("Delete this Dashboard?")) {
-            var dashboardid = this._dashboardControl.dashboardContainer().id;
-            this._toolbox.menuVisible(false);
-            $.ajax({
-                url: 'Home/DeleteDashboard',
-                data: { DashboardID: dashboardid },
-                type: 'POST',
-                success: (function () { this._dashboardControl.unloadDashboard(); }).bind(this)
-            });
+﻿class DeleteDashboardExtension {
+    toolbox;
+    menuItem;
+    dashboardControl;
+    name = "dxdde-delete-dashboard";
+
+    constructor(dashboardControl) {
+        this.dashboardControl = dashboardControl;
+        this.menuItem = {
+            id: this.name,
+            title: "Delete",
+            click: this.deleteDashboard.bind(this),
+            selected: ko.observable(false),
+            disabled: ko.computed(function () { return !this.dashboardControl.dashboard(); }, this),
+            index: 113,
+            hasSeparator: true,
+            data: this
+        };
+    }
+
+    deleteDashboard() {
+        if (this.toolbox) {
+            if (confirm("Delete this Dashboard?")) {
+                var dashboardid = this.dashboardControl.dashboardContainer().id;
+
+                this.toolbox.menuVisible(false);
+
+                $.ajax({
+                    url: 'Home/DeleteDashboard',
+                    data: { DashboardID: dashboardid },
+                    type: 'POST',
+                    success: (function () { this.dashboardControl.unloadDashboard(); }).bind(this)
+                });
+            }
         }
     }
+
+    start() {
+        this.toolbox = this.dashboardControl.findExtension("toolbox");
+        this.toolbox && this.toolbox.menuItems.push(this.menuItem);
+    }
+
+    stop() {
+        this.toolbox && this.toolbox.menuItems.remove(this.menuItem);
+    }
 }
-DeleteDashboardExtension.prototype.start = function () {
-    this._toolbox = this._dashboardControl.findExtension('toolbox');
-    this._toolbox && this._toolbox.menuItems.push(this._menuItem);
-};
-DeleteDashboardExtension.prototype.stop = function () {
-    this._toolbox && this._toolbox.menuItems.remove(this._menuItem);
-};
