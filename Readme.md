@@ -21,7 +21,7 @@ The image below shows the result of the extensions implementation.
 * [Program.cs](./CS/AspNetCoreDashboard/Program.cs)
 * [CustomDashboardFileStorage.cs](./CS/AspNetCoreDashboard/Storages/CustomDashboardFileStorage.cs)
 * [Index.cshtml](./CS/AspNetCoreDashboard/Pages/Index.cshtml)
-* [_Layout.cshtml](./CS/AspNetCoreDashboard/Pages/_Layout.cshtml#L19)
+* [_Layout.cshtml](./CS/AspNetCoreDashboard/Pages/_Layout.cshtml#L19-L23)
 * [DeleteExtension.js](./CS/AspNetCoreDashboard/wwwroot/js/DeleteExtension.js)
 * [SaveAsExtension.js](./CS/AspNetCoreDashboard/wwwroot/js/SaveAsExtension.js)
 
