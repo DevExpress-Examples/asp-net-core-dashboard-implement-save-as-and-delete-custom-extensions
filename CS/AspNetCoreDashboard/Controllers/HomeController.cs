@@ -1,4 +1,4 @@
-﻿using AspNetCoreDashboard.Storages;
+using AspNetCoreDashboard.Storages;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreDashboard.Controllers {

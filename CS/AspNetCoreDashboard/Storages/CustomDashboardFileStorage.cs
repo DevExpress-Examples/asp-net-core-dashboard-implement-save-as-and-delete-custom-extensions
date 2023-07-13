@@ -1,4 +1,4 @@
-﻿using DevExpress.DashboardWeb;
+using DevExpress.DashboardWeb;
 
 namespace AspNetCoreDashboard.Storages {
     public class CustomDashboardFileStorage : DashboardFileStorage {
