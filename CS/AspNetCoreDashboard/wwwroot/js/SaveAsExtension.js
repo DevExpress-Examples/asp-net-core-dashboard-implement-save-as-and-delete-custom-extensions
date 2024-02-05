@@ -31,7 +31,7 @@
 
     start() {
         this.toolbox = this.dashboardControl.findExtension("toolbox");
-        this.newDashboardExtension = this.dashboardControl.findExtension("create-dashboard");
+        this.newDashboardExtension = this.dashboardControl.findExtension("createDashboard");
 
         if (this.isExtensionAvailable())
             this.toolbox.menuItems.push(this.menuItem);
